@@ -1,0 +1,149 @@
+@import "./mixin/mixin.scss";
+
+$bg-primary: #03faee;
+$bg-secondary: #f8f8f8;
+$color-primary: #8b8b8b;
+$shadow: #92f7f2;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    color: black;
+}
+
+/*HEADER*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+    align-items: center;
+    ul {
+        display: flex;
+        gap: 3vw;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+/*PORTADA*/
+
+.cover {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    &_text {
+        width: 35vw;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        h2 {
+            font-size: 55px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            line-height: 70px;
+            letter-spacing: 10px;
+            position: relative;
+            .decoration {
+                @include decoration(50%,45px);
+            }
+        }
+        p{
+            color: $color-primary;
+        }
+        button {
+            @include button();
+        }
+    }
+    img {
+        width: 60%;
+    }
+    
+}
+
+/*TARJETAS*/
+
+.the_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 250px;
+        background-color: $bg-secondary;
+        padding: 20px;
+        position: relative;
+        h5 {
+            position: relative;
+            z-index: 1;
+            font-size: 18px;
+            .decoration2 {
+                @include decoration(6%,10px);
+                top: -2px;
+            }
+        }
+        p {
+            font-size: 13px;
+        }
+        .number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border: solid black 1px; 
+            border-radius: 100%;
+            z-index: 2;
+            background-color: $bg-secondary;
+            position: relative;
+            top: -10px;
+            left: -10px;  
+        }
+        .shadow {
+        @include shadow(10px,6px,1); 
+        }
+         
+        }
+}
+
+
+
+
+/*FOOTER*/
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:40px 20px 20px 20px;
+    .social {
+        display: flex;
+        gap: 20px;
+        .icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;  
+            background-color: white;
+            img {
+            height: 20px;
+            }
+            .shadow {
+                @include shadow(-1px,-4px,-1); 
+            }
+        }
+    }
+}
+

@@ -1,0 +1,29 @@
+@mixin decoration($width, $height) {
+    background-color: $bg-primary;
+    width: $width;
+    height: $height;
+    position: absolute;
+    z-index: -1;
+    top: -5px;
+}
+
+@mixin button() {
+    width: 120px;
+    height: 60px;
+    background-color: $bg-primary;
+    border: dotted 1px black;
+    border-radius: 7px;
+    padding: 10px;
+    text-align: center;
+}
+
+@mixin shadow($top,$left,$index) {
+    background-color: $bg-primary;
+    height: 37px;
+    width: 37px;
+    border-radius: 100%;
+    position: absolute;
+    top: $top;
+    left: $left;
+    z-index: $index;
+}
